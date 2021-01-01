@@ -3,6 +3,7 @@ package de.elmasconsulting.ecmanagement.controller;
 import de.elmasconsulting.ecmanagement.Exceptions.UserNotFoundException;
 import de.elmasconsulting.ecmanagement.model.User;
 import de.elmasconsulting.ecmanagement.repository.UserRepository;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +41,8 @@ public class UserController {
     }
 
     @PutMapping("/user/{id}")
-                User replaceUser(@RequestBody User user, @PathVariable Long id) {
-
+    User replaceUser(@RequestBody User user, @PathVariable Long id) {
+        log.info("replaceUser()");
         return userRepository.findById(id)
                 .map(users -> {
                     user.setUsername(user.getUsername());

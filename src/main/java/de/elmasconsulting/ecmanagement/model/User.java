@@ -20,10 +20,8 @@ public class User implements Serializable {
             initialValue = 1000
     )
     @Column(name = "userID")
-    private int userID;
+    private Long userID;
 
-    @lombok.Getter
-    @lombok.Setter
     @Column(name = "rollID")
     private int rollID;
 
@@ -37,7 +35,7 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
-    public User(int userID,int rollID, String username, String password) {
+    public User(Long userID,int rollID, String username, String password) {
         this.userID = userID;
         this.rollID = rollID;
         this.username = username;
