@@ -3,7 +3,6 @@ package de.elmasconsulting.ecmanagement.controller;
 import de.elmasconsulting.ecmanagement.Exceptions.UserNotFoundException;
 import de.elmasconsulting.ecmanagement.model.User;
 import de.elmasconsulting.ecmanagement.repository.UserRepository;
-import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,7 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    User newEmployee(@RequestBody User user) {
+    User newUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
